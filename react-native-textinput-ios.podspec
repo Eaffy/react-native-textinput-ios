@@ -17,5 +17,6 @@ Pod::Spec.new do |s|
 
   s.source = { :git => "https://github.com/Eaffy/react-native-textinput-ios.git" }
   s.source_files = "RNGTextField/*.{h,m}"
-
+  
+  s.dependency 'React'
 end
