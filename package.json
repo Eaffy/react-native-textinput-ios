@@ -1,0 +1,26 @@
+{
+  "name": "react-native-textinput-ios",
+  "version": "1.0.0",
+  "description": "react-native bridge files for iOS native textfield",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Eaffy/react-native-textinput-ios.git"
+  },
+  "keywords": [
+    "react-native",
+    "textinput",
+    "ios",
+    "textfield",
+    "maxlength"
+  ],
+  "author": "QiaoYiFei",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Eaffy/react-native-textinput-ios/issues"
+  },
+  "homepage": "https://github.com/Eaffy/react-native-textinput-ios#readme"
+}
