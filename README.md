@@ -37,4 +37,6 @@ returnKeyType: PropTypes.oneOf([
 autoFocus: PropTypes.bool,
 text: PropTypes.string,
 onFocus: PropTypes.func,
+onBlur: PropTypes.func,
+onEndEditing: PropTypes.func
 ```
