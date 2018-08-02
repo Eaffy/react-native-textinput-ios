@@ -76,6 +76,7 @@ TextInputIOS.propTypes = {
   text: PropTypes.string,
   onFocus: PropTypes.func,
   onBlur: PropTypes.func,
+  onEndEditing: PropTypes.func
 };
 
 var RNGTextField = requireNativeComponent('RNGTextField', TextInputIOS);

@@ -13,6 +13,7 @@
 
 @property (nonatomic, strong, nullable) NSNumber *maxLength;
 @property (nonatomic, copy, nullable) RCTBubblingEventBlock onChange;
+@property (nonatomic, copy, nullable) RCTBubblingEventBlock onEndEditing;
 @property (nonatomic, strong, nullable) UIColor *placeholderTextColor;
 
 @end

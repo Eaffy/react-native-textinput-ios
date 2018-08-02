@@ -21,6 +21,7 @@ RCT_EXPORT_VIEW_PROPERTY(placeholder, NSString)
 RCT_EXPORT_VIEW_PROPERTY(maxLength, NSNumber)
 RCT_EXPORT_VIEW_PROPERTY(text, NSString)
 RCT_EXPORT_VIEW_PROPERTY(onChange, RCTBubblingEventBlock)
+RCT_EXPORT_VIEW_PROPERTY(onEndEditing, RCTBubblingEventBlock)
 RCT_EXPORT_VIEW_PROPERTY(returnKeyType, UIReturnKeyType)
 RCT_EXPORT_VIEW_PROPERTY(placeholderTextColor, UIColor)
 
@@ -30,7 +31,6 @@ RCT_EXPORT_VIEW_PROPERTY(placeholderTextColor, UIColor)
     RNGTextField *textField = [[RNGTextField alloc] init];
     textField.delegate = self;
     [textField addTarget:self action:@selector(textFieldDidChanged:) forControlEvents:UIControlEventEditingChanged];
-    // [textField becomeFirstResponder];
     return textField;
 }
 
@@ -48,6 +48,12 @@ RCT_EXPORT_VIEW_PROPERTY(placeholderTextColor, UIColor)
     }
     if (textField.onChange) {
         textField.onChange(@{@"text": textField.attributedText.string});
+    }
+}
+
+- (void)textFieldDidEndEditing:(RNGTextField *)textField {
+    if (textField.onEndEditing) {
+        textField.onEndEditing(@{@"text": textField.attributedText.string});
     }
 }
 
