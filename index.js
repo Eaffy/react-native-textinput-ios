@@ -17,7 +17,6 @@ class TextInputIOS extends Component {
   _onChange = (event) => {
     // Make sure to fire the mostRecentEventCount first so it is already set on
     // native when the text value is set.
-console.log('eventeventevent', event);
     var text = event.text;
     this.props.onChange && this.props.onChange(event);
     this.props.onChangeText && this.props.onChangeText(text);
@@ -30,7 +29,11 @@ console.log('eventeventevent', event);
   }
 
   _onFocus = (event) => {
-    console.log('eventeventevent', event);
+    
+  }
+
+  _onBlur = (event) => {
+    this._textInput.focus()
   }
 
   _getText = () => {
@@ -39,10 +42,12 @@ console.log('eventeventevent', event);
   }
 
   render() {
-    return <RNGTextField ref={component => this._textInput = component}  style={{width: 400, height: 50}} {...this.props}
-    text={this._getText()}
-    onChange={this._onChange}
-    onFocus={this._onFocus}/>;
+    return <RNGTextField ref={component => this._textInput = component}
+              style={{width: 400, height: 50}} {...this.props}
+              text={this._getText()}
+              onChange={this._onChange}
+              onFocus={this._onFocus}
+              onBlur={this._onBlur}/>;
   }
 }
 
@@ -70,6 +75,7 @@ TextInputIOS.propTypes = {
   autoFocus: PropTypes.bool,
   text: PropTypes.string,
   onFocus: PropTypes.func,
+  onBlur: PropTypes.func,
 };
 
 var RNGTextField = requireNativeComponent('RNGTextField', TextInputIOS);
