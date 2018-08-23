@@ -17,7 +17,7 @@ class TextInputIOS extends Component {
   _onChange = (event) => {
     // Make sure to fire the mostRecentEventCount first so it is already set on
     // native when the text value is set.
-    var text = event.text;
+    var text = event.nativeEvent.text;
     this.props.onChange && this.props.onChange(event);
     this.props.onChangeText && this.props.onChangeText(text);
 
